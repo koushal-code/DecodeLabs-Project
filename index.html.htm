@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecodeLabs AI Projects Portfolio</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --code-bg: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border-top: 5px solid var(--primary);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+        }
+
+        .file-name {
+            font-family: monospace;
+            background: var(--code-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .tags {
+            margin: 1rem 0 1.5rem 0;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.3rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .case-study h4 {
+            margin: 1.5rem 0 0.5rem 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .case-study p, .case-study ul {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .case-study ul {
+            padding-left: 1.5rem;
+        }
+
+        .case-study li {
+            margin-bottom: 0.5rem;
+        }
+
+        .metrics-grid {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .metrics-grid th, .metrics-grid td {
+            border: 1px solid #e2e8f0;
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+        }
+
+        .metrics-grid th {
+            background-color: var(--code-bg);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .summary-boxes {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .summary-box {
+            background: var(--code-bg);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #0f172a;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .summary-boxes {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DecodeLabs AI Projects</h1>
+        <p>A portfolio of practical AI implementations showcasing rule-based logic, supervised machine learning, NLP recommendations, and computer vision.</p>
+    </header>
+
+    <div class="container">
+        <!-- Project 1 -->
+        <article class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">Rule-Based Interactive Chatbot</h3>
+                <span class="file-name">chat_bot.py</span>
+            </div>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Datetime Logic</span>
+                <span class="tag">Control Flow</span>
+                <span class="tag">CLI</span>
+            </div>
+            <div class="case-study">
+                <h4>Project Overview</h4>
+                <p>Developed a lightweight, continuous-loop command-line chatbot designed to interact with users via predefined rules. This project established a foundation in handling user inputs, data normalization, and dynamic response generation.</p>
+
+                <h4>Technical Implementation</h4>
+                <ul>
+                    <li><strong>Dynamic Data Integration:</strong> Imported Python's <code>datetime</code> module to actively fetch and format real-time system clocks and dates when queried by the user.</li>
+                    <li><strong>Dictionary Mapping:</strong> Engineered an O(1) response lookup system using Python dictionaries to map distinct user intents to appropriate bot replies.</li>
+                    <li><strong>Session Management:</strong> Built a <code>while True</code> control loop with string cleaning (lowercasing and whitespace stripping) to maintain active state until terminal commands ("bye" or "exit") are triggered.</li>
+                </ul>
+
+                <h4>Intent Resolution Mapping</h4>
+                <div class="summary-boxes">
+                    <span class="summary-box">Complexity: O(1) Lookup Time</span>
+                    <span class="summary-box">State Management: Continuous Loop</span>
+                    <span class="summary-box">Exception Handling: Graceful Degradation</span>
+                </div>
+
+                <table class="metrics-grid">
+                    <thead>
+                        <tr>
+                            <th>User Intent Category</th>
+                            <th>Trigger Phrase(s)</th>
+                            <th>System Response Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Greeting</td>
+                            <td>"hello", "hi"</td>
+                            <td>Returns standardized welcoming text</td>
+                        </tr>
+                        <tr>
+                            <td>System Query</td>
+                            <td>"what is the time?", "what are you?"</td>
+                            <td>Injects dynamic formatted datetime variables</td>
+                        </tr>
+                        <tr>
+                            <td>Session Termination</td>
+                            <td>"bye", "exit"</td>
+                            <td>Triggers break loop and exits application</td>
+                        </tr>
+                        <tr>
+                            <td>Fallback / Default</td>
+                            <td><i>*Unrecognized Input*</i></td>
+                            <td>Returns safe fallback: "I did not understand."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">Iris Species Classification Pipeline</h3>
+                <span class="file-name">DecodeLabs_AI_Project_2.ipynb</span>
+            </div>
+            <div class="tags">
+                <span class="tag">Scikit-Learn</span>
+                <span class="tag">Pandas / Seaborn</span>
+                <span class="tag">K-Nearest Neighbors (KNN)</span>
+                <span class="tag">Confusion Matrix</span>
+            </div>
+            <div class="case-study">
+                <h4>Project Overview</h4>
+                <p>Engineered an end-to-end supervised machine learning pipeline to classify Iris flower species based on sepal and petal dimensions, focusing on rigorous feature scaling, model selection, and multi-class performance evaluation.</p>
+
+                <h4>Technical Implementation</h4>
+                <ul>
+                    <li><strong>Exploratory Data Analysis:</strong> Utilized <code>seaborn.pairplot</code> to visualize multi-dimensional feature distributions and class boundaries across sepal and petal dimensions.</li>
+                    <li><strong>Data Preprocessing & Scaling:</strong> Split data using an 80/20 train-test ratio (stratified split across 150 instances, yielding 120 training and 30 test samples) and scaled features using <code>StandardScaler</code>.</li>
+                    <li><strong>Model Fitting:</strong> Trained a K-Nearest Neighbors classifier (<code>n_neighbors=5</code>) on scaled feature vectors.</li>
+                    <li><strong>Confusion Matrix Analysis:</strong> Generated and visualized a 3x3 confusion matrix via Seaborn heatmap. The matrix recorded [[10, 0, 0], [0, 9, 1], [0, 1, 9]], showing robust classification handling with minor overlap between Versicolor and Virginica classes.</li>
+                </ul>
+
+                <h4>Complete Performance Metrics</h4>
+                <div class="summary-boxes">
+                    <span class="summary-box">Overall Accuracy: 93.3% (28/30)</span>
+                    <span class="summary-box">Macro Avg F1-Score: 0.93</span>
+                    <span class="summary-box">Weighted Avg F1-Score: 0.93</span>
+                </div>
+
+                <table class="metrics-grid">
+                    <thead>
+                        <tr>
+                            <th>Class / Metric</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>F1-Score</th>
+                            <th>Support</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Setosa (Class 0)</td>
+                            <td>1.00</td>
+                            <td>1.00</td>
+                            <td>1.00</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Versicolor (Class 1)</td>
+                            <td>0.90</td>
+                            <td>0.90</td>
+                            <td>0.90</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Virginica (Class 2)</td>
+                            <td>0.90</td>
+                            <td>0.90</td>
+                            <td>0.90</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Macro Average</strong></td>
+                            <td><strong>0.93</strong></td>
+                            <td><strong>0.93</strong></td>
+                            <td><strong>0.93</strong></td>
+                            <td><strong>30</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">Digital Career Matchmaker (NLP)</h3>
+                <span class="file-name">Decodelabs_project_3.ipynb</span>
+            </div>
+            <div class="tags">
+                <span class="tag">NLP</span>
+                <span class="tag">TF-IDF Vectorization</span>
+                <span class="tag">Cosine Similarity</span>
+                <span class="tag">Pandas</span>
+            </div>
+            <div class="case-study">
+                <h4>Project Overview</h4>
+                <p>Built a content-based recommendation engine that analyzes a user's technical skill stack and mathematically pairs them with the most relevant IT job roles from a comprehensive dataset.</p>
+
+                <h4>Technical Implementation</h4>
+                <ul>
+                    <li><strong>Text Normalization:</strong> Designed a custom regex-based cleaning pipeline to standardize terminology (e.g., mapping "ml" to "machine learning") and remove noise from job descriptions and requirements.</li>
+                    <li><strong>Vectorization:</strong> Applied <code>TfidfVectorizer</code> (with English stop-words removed) to transform unstructured text across 493 job entries into measurable numerical matrices.</li>
+                    <li><strong>Similarity Scoring:</strong> Computed <code>cosine_similarity</code> between the user's vectorized skill profile and the dataset to rank the closest matches mathematically.</li>
+                    <li><strong>Interactive CLI:</strong> Developed a robust user interface with integrated help menus, categorized skill dictionaries, and input validation filters.</li>
+                </ul>
+
+                <h4>Algorithm Evaluation & Match Output</h4>
+                <div class="summary-boxes">
+                    <span class="summary-box">Dataset Size: 493 Target Roles</span>
+                    <span class="summary-box">Feature Engineering: 4 Combined Columns</span>
+                    <span class="summary-box">Deduplication: Kept highest-scoring distinct roles</span>
+                </div>
+
+                <table class="metrics-grid">
+                    <thead>
+                        <tr>
+                            <th>Sample Input Features</th>
+                            <th>Recommended Job Title</th>
+                            <th>Cosine Similarity Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3"><code>"html, css, js"</code></td>
+                            <td>Web Designer (UI/UX Designer)</td>
+                            <td>0.2995</td>
+                        </tr>
+                        <tr>
+                            <td>Junior Front End Developer</td>
+                            <td>0.2994</td>
+                        </tr>
+                        <tr>
+                            <td>Entry Level Web Developer</td>
+                            <td>0.2639</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">Computer Vision OCR Engine</h3>
+                <span class="file-name">optical_charecter_recognition.ipynb</span>
+            </div>
+            <div class="tags">
+                <span class="tag">OpenCV (cv2)</span>
+                <span class="tag">PyTesseract</span>
+                <span class="tag">Image Processing</span>
+                <span class="tag">Data Parsing</span>
+            </div>
+            <div class="case-study">
+                <h4>Project Overview</h4>
+                <p>Developed a visual data extraction pipeline capable of parsing text from raw images by combining traditional computer vision preprocessing with Google's Tesseract OCR engine.</p>
+
+                <h4>Technical Implementation</h4>
+                <ul>
+                    <li><strong>Image Preprocessing:</strong> Handled image loading via OpenCV and applied grayscale conversion. Implemented <code>cv2.adaptiveThreshold</code> (Gaussian) to drastically reduce image noise and create optimal text contrast.</li>
+                    <li><strong>Text Extraction:</strong> Fed the processed image arrays into <code>pytesseract.image_to_data</code> (Output.DICT) to extract both the recognized text strings and their spatial coordinates as a queryable dictionary.</li>
+                    <li><strong>Coordinate Mapping:</strong> Extracted bounding box data (Left, Top, Width, Height) to calculate exact text placement on the original image canvas.</li>
+                </ul>
+
+                <h4>Detection Parameters & Filtering Metrics</h4>
+                <div class="summary-boxes">
+                    <span class="summary-box">Noise Reduction: Gaussian Adaptive Threshold</span>
+                    <span class="summary-box">Strict Confidence Threshold: ≥ 80%</span>
+                    <span class="summary-box">Null Filter: Removed empty string detections</span>
+                </div>
+
+                <table class="metrics-grid">
+                    <thead>
+                        <tr>
+                            <th>Pipeline Stage</th>
+                            <th>CV/OCR Function</th>
+                            <th>Output / Action Applied</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Color Conversion</td>
+                            <td><code>cv2.cvtColor</code></td>
+                            <td>BGR color space to Grayscale array</td>
+                        </tr>
+                        <tr>
+                            <td>Binarization</td>
+                            <td><code>cv2.adaptiveThreshold</code></td>
+                            <td>Block size 11, C value 2 applied to isolate text</td>
+                        </tr>
+                        <tr>
+                            <td>Data Extraction</td>
+                            <td><code>pytesseract.image_to_data</code></td>
+                            <td>Generates text, confidence (%), and coordinates</td>
+                        </tr>
+                        <tr>
+                            <td>Visual Overlay</td>
+                            <td><code>cv2.rectangle</code> & <code>cv2.putText</code></td>
+                            <td>Draws green bounds (0,255,0) with red text (0,0,255)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p>© 2026 DecodeLabs AI Projects Portfolio. Built based on hands-on Python implementations.</p>
+    </footer>
+
+</body>
+</html>
